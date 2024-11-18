@@ -2147,14 +2147,15 @@ var ASM_CONSTS = {
           console.log({ view });
           const { data, error } = await window._supabase.from(view).select("*");
           console.log({ data });
-          // const arr = data.map(item => {
-          //   return {username:item.username, score:Number(item.score)};
-          // });
-          // console.log({leaderboard:arr});
-          // window.unityInstance.SendMessage(
-          //     "GameManager",
-          //     "OnLeaderboardReceived",
-          //    JSON.stringify(arr)
+          const arr = data.map(item => {
+            return {username:item.username, score:Number(item.score)};
+          });
+          console.log({leaderboard:arr});
+          window.unityInstance.SendMessage(
+              "GameManager",
+              "OnLeaderboardReceived",
+             JSON.stringify(arr)
+          );
         }
         // );
       } catch (getLeaderboardError) {
