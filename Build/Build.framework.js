@@ -2143,12 +2143,14 @@ var ASM_CONSTS = {
   async function _GetLeaderboard(leaderboard) {
          if( window.unityInstance && _supabase  && window.Telegram.WebApp ){
             try {
-              const view = UTF8ToString(leaderboard)
+              const view = UTF8ToString(leaderboard);
+              console.log({view});
               const { data, error } = await window._supabase.from(view).select('*');
-              const arr = data.map(item => {
-                return {username:item.username, score:Number(item.score)};
-              });
-              console.log({leaderboard:arr});
+              console.log({data});
+              // const arr = data.map(item => {
+              //   return {username:item.username, score:Number(item.score)};
+              // });
+              // console.log({leaderboard:arr});
               // window.unityInstance.SendMessage(
               //     "GameManager",
               //     "OnLeaderboardReceived",
