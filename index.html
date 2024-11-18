@@ -206,12 +206,12 @@
 
         if (window.unityInstance) {
           window.addEventListener('focus', function () {
-            window.unityInstance.SendMessage('GameManager', 'OnGameFocus', 'focused');
+            //window.unityInstance.SendMessage('GameManager', 'OnGameFocus', 'focused');
 			window.fitScreen();
           });
 
           window.addEventListener('blur', function () {
-            window.unityInstance.SendMessage('GameManager', 'OnGameFocus', 'blurred');
+            //window.unityInstance.SendMessage('GameManager', 'OnGameFocus', 'blurred');
           });
 
         }
@@ -236,12 +236,12 @@
         if (window.unityInstance) {
 			if(object.status === "paid"){ // stars
 				// disable button
-				window.unityInstance.SendMessage("RequestHandler", "PremiumCheckerFunction");
+				//window.unityInstance.SendMessage("RequestHandler", "PremiumCheckerFunction");
 				//window.unityInstance.SendMessage("RequestHandler", "NotTask","3813-open-link-1726042474574");
 			  } else {
 				// enable button
 				console.log("stars closed");
-				window.unityInstance.SendMessage("GameManager", "TogglePayButtons", 1);
+				//window.unityInstance.SendMessage("GameManager", "TogglePayButtons", 1);
 			  }
 			}
       });
@@ -262,7 +262,7 @@
 						// wallet closed
 						console.log("ton closed");
 						window.fitScreen();
-						window.unityInstance.SendMessage("GameManager", "TogglePayButtons", 1);
+						//window.unityInstance.SendMessage("GameManager", "TogglePayButtons", 1);
 						//console.log({closeReason : state.closeReason });
 					}
 				}
