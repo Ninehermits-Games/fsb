@@ -2148,11 +2148,12 @@ var ASM_CONSTS = {
               const arr = data.map(item => {
                 return {username:item.username, score:Number(item.score)};
               });
-              window.unityInstance.SendMessage(
-                  "GameManager",
-                  "OnLeaderboardReceived",
-                 JSON.stringify(arr)
-              );
+              console.log({leaderboard:arr});
+              // window.unityInstance.SendMessage(
+              //     "GameManager",
+              //     "OnLeaderboardReceived",
+              //    JSON.stringify(arr)
+              // );
             } catch (getLeaderboardError){
               console.log({getLeaderboardError});
             }
